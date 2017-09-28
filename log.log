@@ -1,0 +1,6 @@
+2017-09-29 10:53:12 DEBUG MyClass:17 - Hello this is a debug message
+2017-09-29 10:53:12 INFO  MyClass:18 - Hello this is an info message
+2017-10-05 11:38:33 DEBUG MyClass:17 - Hello this is a debug message
+2017-10-05 11:38:33 INFO  MyClass:18 - Hello this is an info message
+2017-10-05 11:40:30 DEBUG MyClass:17 - Hello this is a debug message
+2017-10-05 11:40:30 INFO  MyClass:18 - Hello this is an info message
