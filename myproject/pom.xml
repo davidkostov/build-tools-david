@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>MyProject2</artifactId>
+        <groupId>clouway</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>myproject</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>clouway</groupId>
+            <artifactId>myproject-bl</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>clouway</groupId>
+            <artifactId>myproject-bo</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>clouway</groupId>
+            <artifactId>myproject-pl</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>jarjar-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jarjar</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>log4j:log4j</include>
+                                <include>junit:junit</include>
+                                <include>mysql:mysql-connector-java</include>
+                                <include>clouway:myproject-bl</include>
+                                <include>clouway:myproject-bo</include>
+                                <include>clouway:myproject-pl</include>
+                            </includes>
+                            <rules>
+                                <keep>
+                                    <pattern>com.google.inject.**</pattern>
+                                </keep>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
